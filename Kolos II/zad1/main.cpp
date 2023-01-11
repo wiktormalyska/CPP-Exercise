@@ -50,6 +50,8 @@ int main() {
     fun_auxPointer=&fun_aux;
 
     fun_arr(tab1, tab2, fun_auxPointer, n);
+    delete[] tab1;
     printArray(tab2, n);
+    delete[]tab2;
     return 0;
 }
