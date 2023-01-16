@@ -25,7 +25,7 @@ int main() {
 
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < 2*m; ++j) {
-            arr2d[n][m]=rand()%10;
+            arr2d[i][j]=rand()%10;
         }
     }
 
@@ -50,6 +50,7 @@ int main() {
         for (int j = 0; j < m; ++j) {
             std::cout<<arr2d_2[i][j]<<"\t";
         }
+        std::cout<<"\n";
     }
 
     return 0;
