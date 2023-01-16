@@ -1,4 +1,4 @@
-/home/wiktor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.7571.171/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/wiktor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.7571.171/bin/ninja/linux/ninja -G Ninja -S /home/wiktor/Desktop/umcs-cpp-exercises/II.7 -B /home/wiktor/Desktop/umcs-cpp-exercises/II.7/cmake-build-debug
+/home/wiktor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.7571.171/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/wiktor/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.7571.171/bin/ninja/linux/ninja -G Ninja -S "/home/wiktor/Desktop/umcs-cpp-exercises/Kolos II/7" -B "/home/wiktor/Desktop/umcs-cpp-exercises/Kolos II/7/cmake-build-debug"
 -- The C compiler identification is GNU 11.3.0
 -- The CXX compiler identification is GNU 11.3.0
 -- Detecting C compiler ABI info
@@ -13,4 +13,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/wiktor/Desktop/umcs-cpp-exercises/II.7/cmake-build-debug
+-- Build files have been written to: /home/wiktor/Desktop/umcs-cpp-exercises/Kolos II/7/cmake-build-debug
