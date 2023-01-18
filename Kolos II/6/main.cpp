@@ -16,40 +16,56 @@ Zbuduj ranking graczy obliczając ich wynik rankingowy. Napisz funkcję, która 
  Napisz program testujący zaimplementowaną funkcję.
 IN:
 [
-“MystiqueHero;1365;6890;15210”,
-“Frizz;5400;6200;11000”,
-“Ziemniak;9965;11000;73000”,
-“Evel00na;10;10;90”
+“MystiqueHero;1365;6890;15210",
+“Frizz;5400;6200;11000",
+“Ziemniak;9965;11000;73000",
+“Evel00na;10;10;90"
 ]
 OUT:
 [
-“MystiqueHero 23465”, //(bo 1365 + 6890 + 15210 = 23465)
-“Frizz 22600”,
-“Ziemniak 93965”,
-“Evel00na 110”,
+“MystiqueHero 23465", //(bo 1365 + 6890 + 15210 = 23465)
+“Frizz 22600",
+“Ziemniak 93965",
+“Evel00na 110",
 ]
  */
 #include <iostream>
 #include <cstring>
+#include <stdio.h>
 
-void func(char* playerInfo, char* playerScore){
-    char separator = ';';
+void func(char** playerInfo, char** playerScore){
     for (int i = 0; i < 4; ++i) {
-        char* playerName [2]= playerInfo[i].substr(0,playerInfo[i].find(separator));
-        char*  score1 = playerInfo[i].substr(1,playerInfo[i].find(separator));
-        char*  score2 = playerInfo[i].substr(2,playerInfo[i].find(separator));
-        char* score3 = playerInfo[i].substr(3,playerInfo[i].find(separator));
-        int score1I = std::stoi(score1);
-        int score2I = std::stoi(score2);
-        int score3I = std::stoi(score3);
-        int finalScore = score1I+score2I+score3I;
-        char str [50];
+        char* playerName = strtok(playerInfo[i],";");
+        char*  score1 = strtok(NULL,";");
+        char*  score2 = strtok(NULL,";");
+        char* score3 = strtok(NULL,";");
 
-        sprintf(str,"%s \t %i",playerName,finalScore);
+        int score1I = std::atoi(score1);
+        int score2I = std::atoi(score2);
+        int score3I = std::atoi(score3);
+
+        int finalScore = score1I+score2I+score3I;
+
+        char *str = new char[100];
+        sprintf(str,"%s \t %d",playerName,finalScore);
+        playerScore[i]=str;
     }
 }
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    char ** players = new char*[4];
+    for (int i = 0; i < 4; i++){
+        char* data = new char[100];
+        scanf("%s", data);
+        players[i] = data;
+    }
+
+    char ** playersScore = new char*[4];
+
+    func(players,playersScore);
+
+    for (int i = 0; i < 4; ++i) {
+        std::cout<<playersScore[i]<<"\n";
+    }
     return 0;
 }
